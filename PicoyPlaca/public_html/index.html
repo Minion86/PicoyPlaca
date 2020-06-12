@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pico y Placa Widget</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/chosen/chosen.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/animate.css" />
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/nprogress/nprogress.css" />
+        <link rel="stylesheet" type="text/css" href="assets/style.css?ver=1.0" />
+        <link rel="stylesheet" type="text/css" href="assets/app-responsive.css?ver=1.0" />
+        <link rel="stylesheet" type="text/css" href="assets/sweetalert/sweetalert2.css" />
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="login-wrap rounded">
+
+                <h2 class="text-center">Pico y Placa</h2>
+
+                <form id="frm" class="frm rounded3" method="POST" onsubmit="return false;">
+                    <div class="inner">
+                        <div>
+                            <input placeholder="License Plate Number"  class="lightblue-fields rounded" required="required"  value="" name="licenseplate" id="licenseplate" />    
+                        </div>
+
+                        <div class="top20">
+                            <select data-placeholder="Choose a Month..."  name="month" id="month"  class="select-data">
+                                <option value=""></option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option> 
+                                <option value="6">June</option> 
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+
+                            </select>
+                             <label class="error" id="select_error_month" style="color:#FC2727"><b> Warning : You have to Select One Item.</b></label><td>
+
+                        </div>
+
+                        <div class="top20">
+                            <select data-placeholder="Choose a Year..."  name="year" id="year"  class="select-data">
+                                <option value=""></option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+
+
+                            </select>
+                            <label class="error" id="select_error_year" style="color:#FC2727"><b> Warning : You have to Select One Item.</b></label><td>
+
+                        </div>  
+                        <div class="top20">
+                            <button type="submit" id="calculate" name="calculate" class="yellow-button large rounded3 relative">
+                                Calculate <i class="ion-ios-arrow-thin-right"></i>
+                            </button>
+                        </div>
+
+                    </div> <!--inner-->
+
+
+
+                </form> <!--login-->
+
+
+                <hr/>
+                <a href="/user/register" class="yellow-button large rounded3 relative">
+                    REGISTER <i class="ion-ios-arrow-thin-right"></i>
+                </a>
+
+            </div> <!--login-wrap-->
+        </div> <!--container-->
+
+        <script type="text/javascript" src="assets/jQuery-3.4.1.js"></script>
+        <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/chosen/chosen.jquery.min.js"></script>
+        <script type="text/javascript" src="assets/form-validator/jquery.form-validator.min.js"></script>
+        <script type="text/javascript" src="assets/nprogress/nprogress.js"></script>
+        <script type="text/javascript" src="assets/sweetalert/sweetalert2.js"></script>
+        <script type="text/javascript" src="assets/input-mask/jquery.inputmask.js" charset="utf-8"></script>
+        <script type="text/javascript" src="assets/app.js?ver=1.0"></script>
+    </body>
+
+
+</html>
