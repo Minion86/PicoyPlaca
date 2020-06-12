@@ -10,6 +10,10 @@
         <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
         <link rel="stylesheet" type="text/css" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
         <link rel="stylesheet" type="text/css" href="assets/nprogress/nprogress.css" />
+        <link href='assets/calendar/core/main.css' rel='stylesheet' />
+        <link href='assets/calendar/daygrid/main.css' rel='stylesheet' />
+        <link href='assets/calendar/timegrid/main.css' rel='stylesheet' />
+        <link href='assets/calendar/list/main.css' rel='stylesheet' />
         <link rel="stylesheet" type="text/css" href="assets/style.css?ver=1.0" />
         <link rel="stylesheet" type="text/css" href="assets/app-responsive.css?ver=1.0" />
         <link rel="stylesheet" type="text/css" href="assets/sweetalert/sweetalert2.css" />
@@ -44,7 +48,7 @@
                                 <option value="12">December</option>
 
                             </select>
-                             <label class="error" id="select_error_month" style="color:#FC2727"><b> Warning : You have to Select One Item.</b></label><td>
+                            <label class="error" id="select_error_month" style="color:#FC2727"><b> Warning : You have to Select One Item.</b></label><td>
 
                         </div>
 
@@ -77,11 +81,10 @@
 
 
                 <hr/>
-                <a href="/user/register" class="yellow-button large rounded3 relative">
-                    REGISTER <i class="ion-ios-arrow-thin-right"></i>
-                </a>
+                
 
             </div> <!--login-wrap-->
+            <div id='calendar'></div>
         </div> <!--container-->
 
         <script type="text/javascript" src="assets/jQuery-3.4.1.js"></script>
@@ -91,6 +94,12 @@
         <script type="text/javascript" src="assets/nprogress/nprogress.js"></script>
         <script type="text/javascript" src="assets/sweetalert/sweetalert2.js"></script>
         <script type="text/javascript" src="assets/input-mask/jquery.inputmask.js" charset="utf-8"></script>
+        
+        <script src='assets/calendar/core/main.js'></script>
+        <script src='assets/calendar/interaction/main.js'></script>
+        <script src='assets/calendar/daygrid/main.js'></script>
+        <script src='assets/calendar/timegrid/main.js'></script>
+        <script src='assets/calendar/list/main.js'></script>
         <script type="text/javascript" src="assets/app.js?ver=1.0"></script>
     </body>
 

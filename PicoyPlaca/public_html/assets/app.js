@@ -22,7 +22,6 @@ jQuery.fn.exists = function () {
         });
     });
 }));
-
 $.validate({
     form: '#frm',
     onError: function () {
@@ -34,54 +33,40 @@ $.validate({
         if ($("select[name=month]").val() == '') {
 
             $("label#select_error_month").show(); // show Warning 
-            $("select#month").focus();  // Focus the select box      
+            $("select#month").focus(); // Focus the select box      
             return false;
-
         }
 
         if ($("select[name=year]").val() == '') {
 
             $("label#select_error_year").show(); // show Warning 
-            $("select#year").focus();  // Focus the select box      
+            $("select#year").focus(); // Focus the select box      
             return false;
-
         }
 
-        generateCalendar(button);
-
+        generateData(button);
         return false;
     }
 });
-
-
 $(document).ready(function () {
 
     $(document).on("keyup", ".numeric_only", function () {
         this.value = this.value.replace(/[^0-9\.]/g, '');
     });
-
     $('#licenseplate').inputmask({"mask": "AAA-9999"});
-
     $("#month").chosen();
-
     $("#year").chosen();
-
     $('.error').hide();
-
     $("#month").change(function () {
         $("label#select_error_month").hide();
     });
-
     $("#year").change(function () {
         $("label#select_error_year").hide();
     });
-
-
-
 }); /*end docu*/
 
 
-var generateCalendar = function (button)
+var generateData = function (button)
 {
     var formData = JSON.parse(JSON.stringify($("#frm").serializeArray()));
     console.log(JSON.stringify(formData));
@@ -101,11 +86,12 @@ var generateCalendar = function (button)
             var dateToMorning = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 09:30:00");
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
-            var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
-            var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
-
-            dates.push(dateMorning);
-            dates.push(dateEvening);
+            //var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
+            //var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
+            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            dates.push(picoyPlacaDateMorning);
+            dates.push(picoyPlacaDateEvening);
         }
         if ((licensePlateLastDigit == "3" || licensePlateLastDigit == "4") && (day == 2))
         {
@@ -114,11 +100,13 @@ var generateCalendar = function (button)
             var dateToMorning = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 09:30:00");
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
-            var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
-            var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
+            //var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
+            //var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
 
-            dates.push(dateMorning);
-            dates.push(dateEvening);
+            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            dates.push(picoyPlacaDateMorning);
+            dates.push(picoyPlacaDateEvening);
         }
         if ((licensePlateLastDigit == "5" || licensePlateLastDigit == "6") && (day == 3))
         {
@@ -127,11 +115,13 @@ var generateCalendar = function (button)
             var dateToMorning = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 09:30:00");
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
-            var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
-            var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
+            //var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
+            //var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
 
-            dates.push(dateMorning);
-            dates.push(dateEvening);
+            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            dates.push(picoyPlacaDateMorning);
+            dates.push(picoyPlacaDateEvening);
         }
         if ((licensePlateLastDigit == "7" || licensePlateLastDigit == "8") && (day == 4))
         {
@@ -139,12 +129,13 @@ var generateCalendar = function (button)
             var dateToMorning = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 09:30:00");
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
-            var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
-            var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
+            //var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
+            //var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
 
-            dates.push(dateMorning);
-            dates.push(dateEvening);
-
+            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            dates.push(picoyPlacaDateMorning);
+            dates.push(picoyPlacaDateEvening);
         }
         if ((licensePlateLastDigit == "9" || licensePlateLastDigit == "0") && (day == 5))
         {
@@ -153,18 +144,47 @@ var generateCalendar = function (button)
             var dateToMorning = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 09:30:00");
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
-            var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
-            var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
+            //var dateMorning = new PicoyPlacaDates(dateFromMorning, dateToMorning);
+            //var dateEvening = new PicoyPlacaDates(dateFromEvening, dateToEvening);
 
-            dates.push(dateMorning);
-            dates.push(dateEvening);
+            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            dates.push(picoyPlacaDateMorning);
+            dates.push(picoyPlacaDateEvening);
         }
     }
-
+    generateCalendar(dates, formData[2].value.toString() + "-" + formData[1].value.toString() + "-1");
     console.log(dates);
 }
 
+var generateCalendar = function (dates, dateStartString) {
+    var dateStart = new Date(dateStartString);
+    var calendarEl = document.getElementById('calendar');
+    calendarEl.innerHTML = "";
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: ['interaction', 'dayGrid', 'timeGrid', 'list'],
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        defaultDate: dateStart,
+        businessHours: true, // display business hours
+        editable: true,
+        events: dates,
+        eventClick: function (arg) {
+            console.log(arg);
+            Swal.fire({
+                icon: 'warning',
+                title: arg.event.title,
+                html: '<p>From:'+arg.event.start.toLocaleString()+'</p><p>To:'+arg.event.end.toLocaleString()+'</p>',
+               
+            })
+        }
 
+    });
+    calendar.render();
+}
 var getDaysInMonth = function (month, year) {
     // Here January is 1 based
     //Day 0 is the last day in the previous month
@@ -172,7 +192,6 @@ var getDaysInMonth = function (month, year) {
 // Here January is 0 based
 // return new Date(year, month+1, 0).getDate();
 };
-
 class PicoyPlacaDates {
     constructor(from, to) {
         this.from = from;

@@ -1274,14 +1274,19 @@ span.tag_push{
 .page-material .btn:hover,
 .page-material .btn:focus
 {
-color:#fff;
+    color:#fff;
 }
 
 .page-material .caret{
-border-top:none;
+    border-top:none;
 }
 
 .page-material .input-field label{
-font-weight:normal;
+    font-weight:normal;
+}
+
+#calendar {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
