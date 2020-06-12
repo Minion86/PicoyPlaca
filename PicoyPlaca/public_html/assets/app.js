@@ -1,9 +1,7 @@
-jQuery.fn.exists = function () {
-    return this.length > 0;
-}
+
 
 (function (factory) {
-    factory(jQuery, window.Inputmask, window);
+    factory($, window.Inputmask, window);
 }
 (function ($, Inputmask, window) {
     //set input mask configurations
@@ -94,8 +92,8 @@ var generateData = function (button)
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
             //we assign the json value to the list 
-            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
-            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            var picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            var picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
             dates.push(picoyPlacaDateMorning);
             dates.push(picoyPlacaDateEvening);
         }
@@ -108,8 +106,8 @@ var generateData = function (button)
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
             //we assign the json value to the list 
-            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
-            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            var picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            var picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
             dates.push(picoyPlacaDateMorning);
             dates.push(picoyPlacaDateEvening);
         }
@@ -122,8 +120,8 @@ var generateData = function (button)
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
             //we assign the json value to the list 
-            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
-            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            var picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            var picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
             dates.push(picoyPlacaDateMorning);
             dates.push(picoyPlacaDateEvening);
         }
@@ -136,8 +134,8 @@ var generateData = function (button)
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
             //we assign the json value to the list 
-            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
-            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            var picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            var picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
             dates.push(picoyPlacaDateMorning);
             dates.push(picoyPlacaDateEvening);
         }
@@ -150,8 +148,8 @@ var generateData = function (button)
             var dateFromEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 16:00:00");
             var dateToEvening = new Date(formData[2].value.toString() + "-" + formData[1].value.toString() + "-" + i.toString() + " 19:30:00");
             //we assign the json value to the list 
-            picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
-            picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
+            var picoyPlacaDateMorning = {"title": "Circulation Restriction", "start": dateFromMorning, "end": dateToMorning, "color": '#ff9f89'};
+            var picoyPlacaDateEvening = {"title": "Circulation Restriction", "start": dateFromEvening, "end": dateToEvening, "color": '#ff9f89'};
             dates.push(picoyPlacaDateMorning);
             dates.push(picoyPlacaDateEvening);
         }
@@ -189,10 +187,4 @@ var generateCalendar = function (dates, dateStartString) {
     });
     calendar.render();
 }
-var getDaysInMonth = function (month, year) {
-    // Here January is 1 based
-    //Day 0 is the last day in the previous month
-    return new Date(year, month, 0).getDate();
-// Here January is 0 based
-// return new Date(year, month+1, 0).getDate();
-};
+
