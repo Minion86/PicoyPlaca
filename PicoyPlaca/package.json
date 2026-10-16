@@ -1,17 +1,21 @@
 {
-    "name": "PicoyPlaca",
-    "version": "1.0.0",
-    "keywords": [
-        "util",
-        "functional",
-        "server",
-        "client",
-        "browser"
-    ],
-    "author": "Nelson",
-    "contributors": [],
-    "dependencies": {},
-    "devDependencies": {
-        "jest": "^26.0.1"
-    }
+  "name": "PicoyPlaca",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Nelson",
+  "contributors": [],
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
 }
